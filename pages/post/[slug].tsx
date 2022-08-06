@@ -84,7 +84,7 @@ const Post = ({post}: Props) => {
             <input
                 {...register("_id")}
                 type="hidden"
-                name="_id" 
+                name={post._id} 
                 value={post._id}/>
 
             <label htmlFor="" className="block mb-5">
@@ -190,3 +190,5 @@ export const getStaticProps: GetStaticProps = async ( {params}) => {
         revalidate: 60, // after 60 seconds, it will update the old cached version
       }
 }
+
+// post._ref == ^._id &&
