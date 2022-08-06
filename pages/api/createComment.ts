@@ -24,6 +24,7 @@ export default  async function createComment(
                 _type: 'reference',
                 _ref: _id,
             }, 
+            approved: true,
             name,
             email,
             comment,

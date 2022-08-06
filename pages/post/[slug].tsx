@@ -42,7 +42,7 @@ const Post = ({post}: Props) => {
             <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
             <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
             <div className="flex items-center space-x-2">
-                <p className="font-extralight text-sm">Blog post by <span className="text-green-600">{post.author.name}</span> - Published at {new Date(post._createAt).toLocaleString()}</p>
+                <p className="font-extralight text-sm">Blog post by <span className="text-green-600">{post.author.name}</span> - Published at {new Date(post._createdAt).toLocaleString()}</p>
             </div>
             <div className="mt-10">
                 <PortableText              
@@ -158,7 +158,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ( {params}) => {
     const query = `*[_type == "post" && slug.current == $slug][0]{
         _id,
-        _createAt,
+        _createdAt,
         title, 
         author -> {
         name,

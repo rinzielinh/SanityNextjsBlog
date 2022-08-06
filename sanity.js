@@ -26,7 +26,8 @@ https://nextjs.org/docs/basic-features/environment-variables
  * Authenticated request (like preview) will always bypass the CDN
  */
 
-    useCdn: process.env.NODE_ENV === "production",
+    ///useCdn: process.env.NODE_ENV === "production",
+    useCdn: false,
 };
 
 // Set up the client for fetching data in the getProps pgae function
